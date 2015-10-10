@@ -13,8 +13,8 @@ if [ "$password" = "" ]; then
     password="123"
 fi
 
-# 配置文件 /etc/shadowsocks.json
-CONFIG=/etc/shadowsocks.json
+# 配置文件 ~/.shadowsocks
+CONFIG=~/.shadowsocks
 sudo dd of=$CONFIG << EOF
 {
     "server"        : "0.0.0.0",
@@ -30,13 +30,13 @@ EOF
 sudo dd of=/etc/rc.local << EOF
 #!/bin/bash
 
-/usr/local/bin/ssserver -c ${CONFIG}
+sudo /usr/local/bin/ssserver -c ${CONFIG} -d start
 exit 0
 EOF
 
 
 # 运行
-nohup ssserver -c $CONFIG > shadowsocks.log &
+sudo /usr/local/bin/ssserver -c ${CONFIG} -d start
 
 # 提示信息
 echo "shadowsocks安装好了\n公有IP  : $(curl ifconfig.me)\n配置文件: $CONFIG \n$(cat $CONFIG)"
