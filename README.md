@@ -7,7 +7,7 @@
 2. 配置安全组的时候打开 TCP - 8388 端口
 3. 待实例启动后用 ssh 登录，在终端运行安装脚本: 
 ```bash
-sh <(curl http://goo.gl/ju90J3 -L)
+sh <(curl https://goo.gl/e94D20 -L)
 ```
 
 Good Luck!
