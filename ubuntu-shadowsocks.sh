@@ -5,6 +5,8 @@ sudo apt-get update
 sudo apt-get -y install python-gevent
 sudo apt-get -y install python-m2crypto
 sudo apt-get -y install python-pip
+sudo pip install --upgrade pip
+sudo pip install setuptools
 sudo pip install shadowsocks
 
 # 设置密码
